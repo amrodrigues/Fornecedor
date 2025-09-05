@@ -1,56 +1,69 @@
 # Fornecedor API
 
-Este é um projeto ASP.NET Core Web API para gerenciar fornecedores. Ele utiliza o Entity Framework Core para acesso ao banco de dados e segue uma arquitetura simples com injeção de dependência.
+Este Ã© um projeto ASP.NET Core Web API para gerenciar fornecedores. Ele utiliza o Entity Framework Core para acesso ao banco de dados e segue uma arquitetura simples com injeÃ§Ã£o de dependÃªncia.
 
 ## Tecnologias Utilizadas
 
 - **ASP.NET Core 6.0**
 - **Entity Framework Core**
 - **SQL Server**
-- **Swagger/OpenAPI** para documentação da API
+- **Swagger/OpenAPI** para documentaÃ§Ã£o da API
 
-## Configuração do Projeto
+## ConfiguraÃ§Ã£o do Projeto
 
-### Pré-requisitos
+### PrÃ©-requisitos
 
 - **.NET 6 SDK** instalado
-- **SQL Server** configurado e em execução
+- **SQL Server** configurado e em execuÃ§Ã£o
 - Ferramenta `dotnet-ef` instalada globalmente:
 
-### Configuração da String de Conexão
+### ConfiguraÃ§Ã£o da String de ConexÃ£o
 
-No arquivo `appsettings.json`, configure a string de conexão para o banco de dados:
+No arquivo `appsettings.json`, configure a string de conexÃ£o para o banco de dados:
+```json 
+{
+  "ConnectionStrings": {
+    "DefaultConnection": "Server=localhost;Database=FornecedorDb;Trusted_Connection=True;"
+  }
+}
+```
 
-```json { "ConnectionStrings": { "DefaultConnection": "Server=localhost;Database=FornecedorDb;Trusted_Connection=True;" } }
+### Restaurar DependÃªncias
 
-### Restaurar Dependências
+Execute o comando abaixo para restaurar os pacotes necessÃ¡rios:
 
-Execute o comando abaixo para restaurar os pacotes necessários:
-
-```bash dotnet tool install --global dotnet-ef ```bash 
+```bash
+ dotnet tool install --global dotnet-ef 
+```
 
 ### Criar o Banco de Dados
 
-1. Crie as migrações:
-```bash dotnet ef migrations add InitialCreate ```bash 
+1. Crie as migraÃ§Ãµes:
+```bash
+ dotnet ef migrations add InitialCreate ```bash 
+```
+3. Aplique as migraÃ§Ãµes para criar o banco de dados:
+```bash
+ dotnet ef database update  
+```
+### Executar a AplicaÃ§Ã£o
 
-2. Aplique as migrações para criar o banco de dados:
-```bash  dotnet ef database update ```bash 
+Execute o comando abaixo para iniciar a aplicaÃ§Ã£o:
+```bash
+dotnet run 
+```
 
-### Executar a Aplicação
-
-Execute o comando abaixo para iniciar a aplicação:
-```bash dotnet run	```bash 
-
-A aplicação estará disponível em `https://localhost:5001/api/fornecedores` ou `http://localhost:5000/api/fornecedores`.
+A aplicaÃ§Ã£o estarÃ¡ disponÃ­vel em `https://localhost:5001/api/fornecedores` ou `http://localhost:5000/api/fornecedores`.
 
 
-## Endpoints Disponíveis
+
+## Endpoints DisponÃ­veis
 
 Os endpoints da API foram gerados automaticamente utilizando o **Scaffolding** do Entity Framework Core. 
 
-
-
+<img width="1038" height="574" alt="Scalofin" src="https://github.com/user-attachments/assets/274328b9-ae11-4352-aea9-5ef726c84406" />
+<img width="885" height="377" alt="Controlador" src="https://github.com/user-attachments/assets/de2192ff-2e6a-4cc4-88ea-1e8a0c7d399e" />
+ 
 - **GET** `/api/fornecedores` - Retorna todos os fornecedores.
 - **POST** `/api/fornecedores` - Adiciona um novo fornecedor.
 - **PUT** `/api/fornecedores/{id}` - Atualiza um fornecedor existente.
@@ -58,9 +71,9 @@ Os endpoints da API foram gerados automaticamente utilizando o **Scaffolding** d
 
 ## Estrutura do Projeto
 
-- **Model**: Contém as classes de modelo (ex.: `Fornecedor`).
-- **Data**: Contém o contexto do banco de dados (`ApiContext`).
-- **Controllers**: Contém os controladores da API.
+- **Model**: ContÃ©m as classes de modelo (ex.: `Fornecedor`).
+- **Data**: ContÃ©m o contexto do banco de dados (`ApiContext`).
+- **Controllers**: ContÃ©m os controladores da API.
 
  
    
