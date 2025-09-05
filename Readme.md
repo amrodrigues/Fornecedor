@@ -75,5 +75,9 @@ Os endpoints da API foram gerados automaticamente utilizando o **Scaffolding** d
 - **Data**: Contém o contexto do banco de dados (`ApiContext`).
 - **Controllers**: Contém os controladores da API.
 
+## Testes da API
+
+As funcionalidades de **CRUD** (Create, Read, Update, Delete) desta API foram testadas e validadas usando o **Postman**. Todos os endpoints estão funcionando corretamente.
+
  
    
