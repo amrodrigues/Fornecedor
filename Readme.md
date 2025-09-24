@@ -40,9 +40,9 @@ Execute o comando abaixo para restaurar os pacotes necessários:
 
 1. Crie as migrações:
 ```bash
- dotnet ef migrations add InitialCreate ```bash 
+ dotnet ef migrations add InitialCreate 
 ```
-3. Aplique as migrações para criar o banco de dados:
+2. Aplique as migrações para criar o banco de dados:
 ```bash
  dotnet ef database update  
 ```
